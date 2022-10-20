@@ -14,8 +14,16 @@ class ViewController: UIViewController {
     @IBOutlet var button3: UIButton!
     
     var countries = [String]()
-    var score = 0
+    var score = 0 {
+        didSet {
+            if score < 0 {
+                score = 0
+            }
+        }
+    }
+    
     var correctAnswer = 0
+    var askedQuestions = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,22 +62,43 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        title = countries[correctAnswer].uppercased()
+        title = "Guess: \(countries[correctAnswer].uppercased()) - Score: \(score)"
+        askedQuestions += 1
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
+        
         var title: String
+        var message: String
 
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
+            message = "Your score is \(score)."
         } else {
-            title = "Wrong"
+            title = "Wrong!"
             score -= 1
+            message = "That’s the flag of \(countries[sender.tag].uppercased())"
+        }
+        
+        guard askedQuestions < 10 else {
+            let ac = UIAlertController(title: "End Game",
+                                       message: "\(title). \(message).",
+                                       preferredStyle: .alert)
+
+            ac.addAction(UIAlertAction(title: "New Game",
+                                       style: .default,
+                                       handler: askQuestion))
+
+            present(ac, animated: true)
+            
+            score = 0
+            askedQuestions = 0
+            return
         }
         
         let ac = UIAlertController(title: title,
-                                   message: "Your score is \(score).",
+                                   message: message,
                                    preferredStyle: .alert)
 
         ac.addAction(UIAlertAction(title: "Continue",
@@ -78,6 +107,5 @@ class ViewController: UIViewController {
 
         present(ac, animated: true)
     }
-    
 }
 

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
             if score < 0 {
                 score = 0
             }
+            showScore()
         }
     }
     
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        showScore()
         
         countries = [
             "estonia",
@@ -62,7 +65,7 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        title = "Guess: \(countries[correctAnswer].uppercased()) - Score: \(score)"
+        title = "Guess: \(countries[correctAnswer].uppercased())"
         askedQuestions += 1
     }
     
@@ -106,6 +109,13 @@ class ViewController: UIViewController {
                                    handler: askQuestion))
 
         present(ac, animated: true)
+    }
+    
+    private func showScore() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "\(score)",
+                                                            style: .plain,
+                                                            target: nil,
+                                                            action: nil)
     }
 }
 

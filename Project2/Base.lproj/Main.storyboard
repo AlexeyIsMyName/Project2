@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Md4-k8-auQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Md4-k8-auQ">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +19,9 @@
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFz-Un-pRl">
                                 <rect key="frame" x="95" y="237" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AFz-Un-pRl" secondAttribute="height" multiplier="2:1" id="qso-xN-miA"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="uk"/>
                                 <connections>
@@ -27,6 +30,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fu-Cu-Cj6">
                                 <rect key="frame" x="95" y="91" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5Fu-Cu-Cj6" secondAttribute="height" multiplier="2:1" id="GWV-1H-HpF"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="russia"/>
                                 <connections>
@@ -35,6 +41,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOb-QQ-zL5">
                                 <rect key="frame" x="95" y="372" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fOb-QQ-zL5" secondAttribute="height" multiplier="2:1" id="O9q-Qk-yfr"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="us"/>
                                 <connections>
@@ -45,12 +54,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fOb-QQ-zL5" secondAttribute="bottom" constant="20" id="Cwp-67-R81"/>
                             <constraint firstItem="fOb-QQ-zL5" firstAttribute="centerX" secondItem="AFz-Un-pRl" secondAttribute="centerX" id="KOG-AP-vE3"/>
                             <constraint firstItem="fOb-QQ-zL5" firstAttribute="top" secondItem="AFz-Un-pRl" secondAttribute="bottom" constant="35" id="N3A-jl-SQJ"/>
                             <constraint firstItem="AFz-Un-pRl" firstAttribute="top" secondItem="5Fu-Cu-Cj6" secondAttribute="bottom" constant="46" id="P8L-PR-F8w"/>
                             <constraint firstItem="5Fu-Cu-Cj6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Qbz-ti-uZh"/>
                             <constraint firstItem="5Fu-Cu-Cj6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UAm-iO-b3B"/>
+                            <constraint firstItem="AFz-Un-pRl" firstAttribute="height" secondItem="5Fu-Cu-Cj6" secondAttribute="height" id="dxc-cz-MyR"/>
                             <constraint firstItem="AFz-Un-pRl" firstAttribute="centerX" secondItem="5Fu-Cu-Cj6" secondAttribute="centerX" id="kxi-HW-BVL"/>
+                            <constraint firstItem="fOb-QQ-zL5" firstAttribute="height" secondItem="AFz-Un-pRl" secondAttribute="height" id="luI-or-cjh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="N3u-MU-vp3"/>
